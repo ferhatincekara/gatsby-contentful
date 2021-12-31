@@ -7,7 +7,7 @@ module.exports = {
       black: '#000',
       white: '#fff',
       accent: '#8dc7cf',
-      text: '#1a1a1a',
+      body: '#1a1a1a',
       caption: '#878a8c',
       border: 'rgba(135, 138, 140, 30%)',
     },
