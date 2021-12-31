@@ -1,10 +1,12 @@
 import React from 'react';
 
-import { Layout } from '@app/components';
+import { Layout, Seo } from '@app/components';
 
 const About: React.FC = () => {
   return (
     <Layout>
+      <Seo title="About" />
+
       <section className="container pt-4 pb-10 md:pb-20 px-5 mx-auto">
         <h3 className="text-h3 font-bold text-center">About</h3>
         <div className="w-full md:w-3/5 mt-10 md:mt-24">

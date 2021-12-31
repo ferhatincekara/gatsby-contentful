@@ -3,6 +3,7 @@ require('dotenv').config();
 module.exports = {
   siteMetadata: {
     title: 'Gatsby Contentful',
+    siteUrl: 'https://www.gatsby-contentful-phi.vercel.app',
   },
   plugins: [
     {

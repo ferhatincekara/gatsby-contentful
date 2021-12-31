@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import Img, { type FluidObject } from 'gatsby-image';
 import { type GatsbyImageProps } from 'gatsby-plugin-image';
 
-import { Brands, Layout, Project } from '@app/components';
+import { Brands, Layout, Project, Seo } from '@app/components';
 
 type HomePropTypes = {
   data: {
@@ -33,6 +33,8 @@ type HomePropTypes = {
 const Home: React.FC<HomePropTypes> = ({ data }) => {
   return (
     <Layout>
+      <Seo title="Home" />
+
       <section className="flex flex-col">
         <div className="container py-10 md:py-20 px-5 mx-auto">
           <span className="block mb-10 md:mb-20 text-h4 md:text-h3">↳</span>

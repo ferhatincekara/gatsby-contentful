@@ -5,5 +5,6 @@ import Layout from './Layout';
 import LinkButton from './LinkButton';
 import Logo from './Logo';
 import Project from './Project';
+import Seo from './Seo';
 
-export { Brands, Footer, Header, Layout, LinkButton, Logo, Project };
+export { Brands, Footer, Header, Layout, LinkButton, Logo, Project, Seo };
