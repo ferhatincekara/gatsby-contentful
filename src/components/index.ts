@@ -1,4 +1,4 @@
 import LinkButton from './LinkButton';
+import Logo from './Logo';
 
-// eslint-disable-next-line import/prefer-default-export
-export { LinkButton };
+export { LinkButton, Logo };
