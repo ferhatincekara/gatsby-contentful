@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img, { type FluidObject } from 'gatsby-image';
 
-import { Layout } from '@app/components';
+import { Brands, Layout } from '@app/components';
 
 type HomePropTypes = {
   data: {
@@ -25,6 +25,21 @@ const Home: React.FC<HomePropTypes> = ({ data }) => {
           </h1>
         </div>
         <Img fluid={data.headCover.childImageSharp.fluid} />
+      </section>
+
+      <section className="container py-10 md:py-20 px-5 mx-auto">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-y-10 md:gap-y-20 justify-items-center text-caption">
+          <Brands.Google className="w-24 md:w-full" />
+          <Brands.Facebook className="w-24 md:w-full" />
+          <Brands.Amazon className="w-24 md:w-full" />
+          <Brands.Stripe className="w-24 md:w-full" />
+          <Brands.Uber className="w-24 md:w-full" />
+          <Brands.Github className="w-24 md:w-full" />
+          <Brands.Slack className="hidden md:block" />
+          <Brands.Dribbble className="hidden md:block" />
+          <Brands.Behance className="hidden md:block" />
+          <Brands.Netlify className="hidden md:block" />
+        </div>
       </section>
     </Layout>
   );
