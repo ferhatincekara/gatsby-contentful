@@ -1,0 +1,11 @@
+.base {
+  @apply inline-flex items-center font-normal py-2 px-4 border-0 cursor-pointer text-small no-underline transition-colors;
+}
+
+.black {
+  @apply bg-black text-white;
+}
+
+.white {
+  @apply bg-white text-black;
+}
