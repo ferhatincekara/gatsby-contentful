@@ -1,8 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img, { type FluidObject } from 'gatsby-image';
+import { type GatsbyImageProps } from 'gatsby-plugin-image';
 
-import { Brands, Layout } from '@app/components';
+import { Brands, Layout, Project } from '@app/components';
 
 type HomePropTypes = {
   data: {
@@ -10,6 +11,21 @@ type HomePropTypes = {
       childImageSharp: {
         fluid: FluidObject;
       };
+    };
+    lastProject: {
+      edges: {
+        node: {
+          id: string;
+          title: string;
+          description: {
+            description: string;
+          };
+          url: string;
+          cover: {
+            gatsbyImageData: GatsbyImageProps;
+          };
+        };
+      }[];
     };
   };
 };
@@ -41,6 +57,20 @@ const Home: React.FC<HomePropTypes> = ({ data }) => {
           <Brands.Netlify className="hidden md:block" />
         </div>
       </section>
+
+      <section className="container pb-10 md:pb-20 px-5 mx-auto">
+        <h2 className="text-h3 md:text-h1 font-medium mb-10 md:mb-24">Featured projects ↓</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6 md:gap-y-12">
+          {data.lastProject.edges.map((project) => (
+            <Project
+              to={project.node.url}
+              title={project.node.title}
+              description={project.node.description.description}
+              cover={project.node.cover.gatsbyImageData}
+            />
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 };
@@ -51,6 +81,22 @@ export const query = graphql`
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    lastProject: allContentfulProject(limit: 4) {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          url
+          cover {
+            gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)
+          }
         }
       }
     }
